@@ -1,0 +1,152 @@
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  min-height: 100vh;
+  background-image: url(content/download.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* NAVBAR */
+.navbar {
+  position: relative;  /* needed for absolute positioning inside */
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+  z-index: 0;
+}
+.nav-horizontal :first-child{
+  margin-right: auto;
+}
+
+/* HORIZONTAL NAVIGATION */
+.nav-horizontal {
+  list-style: none;
+  display: flex;;
+  align-items: center;
+  background-color: white;
+  height: 60px;
+  margin: 0;
+  padding-left: 10px;
+  position: relative;
+  width: 100vw;
+  justify-content: right;
+
+}
+.navbar-horizontal{
+  width: 100vw;
+}
+
+.nav-horizontal li {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Links styling */
+.nav-horizontal a {
+  text-decoration: none;
+  padding: 0 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: black;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+/* Hover background fills full height */
+.nav-horizontal a:hover {
+  background-color: #c0c0c0;
+}
+
+.open-sidebar-navbar {
+  /* remove absolute positioning so it's part of flex layout */
+  position: static;
+  height: 100%;
+  margin-left: auto; /* pushes it to the far right */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  z-index: 100; 
+}
+
+.open-sidebar-navbar:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* SIDEBAR */
+.nav-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.218);
+  box-shadow: -10px 0 10px rgba(255, 255, 255);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-sidebar li {
+  list-style: none;
+  width: 100%;
+}
+
+.nav-sidebar a {
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  width: 100%;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.nav-sidebar a:hover {
+  background-color: #f0f0f0;
+}
+
+/* CLOSE BUTTON */
+.close-button-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.close-button-sidebar:hover {
+  background-color: #a8a8a8;
+}
+
+.Home-sidebar-button a:hover {
+  background-color: #a8a8a8;
+}
