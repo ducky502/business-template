@@ -16,39 +16,41 @@ body {
 
 /* NAVBAR */
 .navbar {
-  position: relative;  /* needed for absolute positioning inside */
   background-color: white;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   padding: 0 10px;
   z-index: 0;
-}
-.nav-horizontal :first-child{
-  margin-right: auto;
 }
 
 /* HORIZONTAL NAVIGATION */
 .nav-horizontal {
   list-style: none;
-  display: flex;;
+  display: flex;
   align-items: center;
   background-color: white;
   height: 60px;
   margin: 0;
-  padding-left: 10px;
-  position: relative;
-  width: 100vw;
-}
-.navbar-horizontal{
-  width: 100vw;
+  padding: 0;
+  width: 100%;
   justify-content: right;
 }
 
 .nav-horizontal li {
   height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Keep company name on left */
+.COMPANY-OR-BUSINESS-NAME {
+  margin-right: auto; /* pushes everything else to the right */
+}
+
+/* Group the right side */
+.nav-right {
   display: flex;
   align-items: center;
 }
@@ -62,32 +64,26 @@ body {
   align-items: center;
   color: black;
   transition: background-color 0.3s ease;
-  width: 100%;
 }
 
-/* Hover background fills full height */
 .nav-horizontal a:hover {
   background-color: #c0c0c0;
 }
 
+/* Sidebar menu button */
 .open-sidebar-navbar {
-  /* remove absolute positioning so it's part of flex layout */
-  position: static;
   height: 100%;
-  margin-left: auto; /* pushes it to the far right */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
   cursor: pointer;
   user-select: none;
-  z-index: 100; 
 }
 
 .open-sidebar-navbar:hover {
   background-color: #f0f0f0;
 }
-
 
 /* SIDEBAR */
 .nav-sidebar {
@@ -96,8 +92,8 @@ body {
   right: 0;
   height: 100vh;
   width: 250px;
-  background-color: rgba(255, 255, 255, 0.218);
-  box-shadow: -10px 0 10px rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -128,7 +124,7 @@ body {
 .close-button-sidebar {
   position: absolute;
   top: 0;
-  right: 0px;
+  right: 0;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -139,7 +135,6 @@ body {
   background-color: transparent;
   transition: background-color 0.3s ease;
   user-select: none;
-  box-sizing: border-box;
 }
 
 .close-button-sidebar:hover {
