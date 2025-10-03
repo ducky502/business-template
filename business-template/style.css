@@ -1,3 +1,6 @@
+/* ===========================
+  RESET & BASE STYLES
+  =========================== */
 * {
   margin: 0;
   padding: 0;
@@ -11,45 +14,72 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ===========================
+  NAVBAR
+  =========================== */
 .navbar {
-  position: absolute; 
-  /* RESET + BASE */
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  height: 60px;
-  justify-content: space-between;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
+  height: 60px;
   display: flex;
   align-items: center;
+  justify-content: right;
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 0;
-  padding-left: 0; /* override left padding */
-  padding-right: 10px; /* keep right padding if you want */
+  padding-left: 0px;
+  padding-right: 20px;
 }
+
+/* Company/Business Name */
+
 .COMPANY-OR-BUSINESS-NAME {
   margin-right: auto;
-  margin-left: 40px; /* move 40px from the left edge */
 }
 
 .COMPANY-OR-BUSINESS-NAME a {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   display: block;
   height: 60px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  transition: background-color 0.3s, width 0.3s;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  width: 250px;
+  overflow: visible;
 }
 
-.COMPANY-OR-BUSINESS-NAME a:hover {
+.COMPANY-OR-BUSINESS-NAME a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 100%;
   background-color: #c0c0c0;
-  border-radius: 0;
+  z-index: -1;
+  transition: transform 0.3s;
+  transform: translateX(-65%) scaleX(0);
+  transform-origin: center;
 }
 
-/* HORIZONTAL NAVIGATION */
+.COMPANY-OR-BUSINESS-NAME a:hover::before {
+  transform: translateX(-65%) scaleX(1);
+}
+
+/* ===========================
+  HORIZONTAL NAVIGATION
+  =========================== */
 .nav-horizontal {
-  list-style: none;
   display: flex;
   align-items: center;
+  list-style: none;
   background-color: white;
   height: 60px;
   margin: 0;
@@ -57,74 +87,64 @@ body {
 }
 
 .nav-horizontal li {
+  display: flex;
   height: 60px;
-  display: flex;
-}
-.nav-right {
-  width: 100vh;
-  justify-content: right;
-}
-/* Group the right side */
-.nav-right {
-  display: flex;
 }
 
-
-
-/* Links styling */
 .nav-horizontal a {
-  text-decoration: none;
-  padding: 0 30px;
-  height: 100%;
   display: flex;
   align-items: center;
-  color: black;
-  transition: background-color 0.3s ease;
-}
-
-.nav-horizontal a:hover {
-  background-color: #c0c0c0;
-}
-.nav-horizontal:first-child
-
-/* Sidebar menu button */
-.open-sidebar-navbar {
   height: 100%;
+  padding: 0 30px;
+  color: black;
+  text-decoration: none;
+}
+/* ===========================
+  NAVBAR RIGHT GROUP
+  =========================== */
+.nav-right {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+
+/* ===========================
+  SIDEBAR MENU BUTTON
+  =========================== */
+.open-sidebar-navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  width: 60px;
+  height: 100%;
   cursor: pointer;
   user-select: none;
-  width:60px;
-  right: 0px;
+  transition: background-color 0.3s ease;
+  right: 0;
 }
 
 .open-sidebar-navbar:hover {
   background-color: #a8a8a8;
 }
 
-/* SIDEBAR */
+/* ===========================
+  SIDEBAR
+  =========================== */
 .nav-sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
   width: 250px;
-  background-color: rgba(255, 255, 255, 0.411);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+  height: 100vh;
   display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.411);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   backdrop-filter: blur(10px);
-}
-
-/* Removed duplicate .COMPANY-OR-BUSINESS-NAME rule to avoid conflicts */
-
-.COMPANY-OR-BUSINESS-NAME a {
-  padding-left: 0 !important; /* force no left padding */
 }
 
 .nav-sidebar li {
@@ -133,39 +153,28 @@ body {
 }
 
 .nav-sidebar a {
-  text-decoration: none;
-  padding: 15px 20px;
   display: block;
   width: 100%;
+  padding: 15px 20px;
   color: black;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .nav-sidebar a:hover {
   background-color: #f0f0f0;
-}
-
-/* CLOSE BUTTON */
-.close-button-sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
   user-select: none;
+  transition: background-color 0.3s ease;
 }
 
 .close-button-sidebar:hover {
   background-color: #a8a8a8;
 }
 
+/* SIDEBAR HOME BUTTON HOVER */
 .Home-sidebar-button a:hover {
   background-color: #a8a8a8;
 }
