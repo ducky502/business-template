@@ -146,7 +146,7 @@ body {
   =========================== */
 .navigation-sidebar {
   position: fixed;
-  top: 0;
+  top: 0px;
   right: 0;
   width: 250px;
   height: 100vh;
@@ -159,9 +159,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.nav-sidebar {
-  justify-content: right;
-}
 
 .nav-sidebar li {
   list-style: none;
@@ -189,9 +186,10 @@ body {
 .close-button-sidebar
 {
   
-    margin-left: 225%;
+  margin-left: 80%;
   user-select: none;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 .close-button-sidebar:hover {
