@@ -126,19 +126,19 @@ body {
   SIDEBAR MENU BUTTON
   =========================== */
 .open-sidebar-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 100%;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
-  right: 0;
+  padding: 10px 20px;
+  background-size: 0% 100%;       /* tiny bar so it’s invisible */
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-size 0.32s linear; /* only size animates */
+  color: #000000;
+  border-radius: 0;
+  display: inline-block;
 }
 
 .open-sidebar-navbar:hover {
-  background-color: #a8a8a8;
+  background-color: #c0c0c0;      /* color appears instantly (already there) */
+  background-size: 100% 100%;     /* grows smoothly */
 }
 
 /* ===========================
