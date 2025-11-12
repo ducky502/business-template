@@ -28,7 +28,6 @@ body {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: right;
   background-color: white;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 0;
@@ -50,21 +49,12 @@ body {
 }
 
 .COMPANY-OR-BUSINESS-NAME a {
-  display: block;
-  height: 60px;
   padding-left: 20px !important;
   padding-right: 0 !important;
-  transition: background-color 0.3s, width 0.3s;
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
   width: 250px;
-  overflow: visible;
-  align-items: center;
-  display: flex;
 }
 
-.COMPANY-OR-BUSINESS-NAME a::before {
+.COMPANY-OR-BUSINESS-NAME a::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -73,12 +63,11 @@ body {
   width: 100%;
   background-color: #c0c0c0;
   z-index: -1;
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+  transition: 0.3s;
   transform: scaleX(0);
-  transform-origin: center;
 }
 
-.COMPANY-OR-BUSINESS-NAME a:hover::before {
+.COMPANY-OR-BUSINESS-NAME a:hover::after {
   transform: scaleX(1);
   width: 100%;
   transition: 0.3s;
@@ -91,17 +80,11 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  background-color: white;
+  background-color: rgba(253, 253, 253, 0);
   height: 60px;
   margin: 0;
   padding: 0;
 }
-
-.nav-horizontal li {
-  display: flex;
-  height: 60px;
-}
-
 
 
 .nav-horizontal a {
@@ -117,28 +100,207 @@ body {
   =========================== */
 .nav-right {
   display: flex;
-  width: 100%;
+  position: absolute; /* place inside the navbar */
+  top: 0px;
+  right: 50px;        /* leave space for the menu button (60px button + 20px gap) */
+  height: 60px;
+  justify-content: right;
+  align-items: center;
   justify-content: flex-end;
+  z-index: 2;
 }
 
 
+/* ===========================
+  NAVBAR RIGHT BUTTONS
+  =========================== */
+
+  /* ABOUT BUTTON */
+    .about-nav{
+    position: fixed;
+    right: 600px;
+    height: 60px;
+  }
+  .about-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .about-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
+
+  /* SERVICES BUTTON */
+    .services-nav{
+    position: fixed;
+    right: 490px;
+    height: 60px;
+  }
+  .services-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .services-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
+
+  /* GALLERY BUTTON */
+    .gallery-nav{
+    position: fixed;
+    right: 380px;
+    height: 60px;
+  }
+
+    .gallery-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .gallery-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
+
+  /* REVIEWS BUTTON */
+    .reviews-nav{
+    position: fixed;
+    right: 270px;
+    height: 60px;
+    }
+
+    .reviews-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .reviews-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
+
+  /* PRICING BUTTON */
+    .pricing-nav{
+    position: fixed;
+    right: 160px;
+    height: 60px;
+    }
+
+  .pricing-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .pricing-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
+
+  /* CONTACT BUTTON */
+    .contact-nav{
+    position: fixed;
+    right: 60px;
+    height: 60px;
+    }
+
+  .contact-nav::after{
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 100%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: 0px;
+  }
+
+  .contact-nav:hover::after{
+    width: 100%; height: 100%;
+    transform: scaleX(1);
+    right: 0px;
+    z-index: -1;
+  }
 /* ===========================
   SIDEBAR MENU BUTTON
   =========================== */
 .open-sidebar-navbar {
   padding: 10px 20px;
-  background-size: 0% 100%;       /* tiny bar so it’s invisible */
+  position: fixed;
   background-repeat: no-repeat;
-  background-position: center;
-  transition: background-size 0.32s linear; /* only size animates */
   color: #000000;
-  border-radius: 0;
-  display: inline-block;
+  right: 15px;
+  width: 60px;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
 }
 
-.open-sidebar-navbar:hover {
-  background-color: #c0c0c0;      /* color appears instantly (already there) */
-  background-size: 100% 100%;     /* grows smoothly */
+.open-sidebar-navbar::after {
+  content: '' ;
+  transform: scaleX(0);
+  width: 100%; height: 97%;
+  top: 0px;
+  z-index: -1;
+  position: absolute;
+  background-color: #c0c0c0;
+  transition: 0.3s;
+  right: -10px;
+  
+}
+
+.open-sidebar-navbar:hover::after{
+  width: 100%; height: 97%;
+  transform: scaleX(1);
+  right: -10px;
+  z-index: -1;
 }
 
 /* ===========================
